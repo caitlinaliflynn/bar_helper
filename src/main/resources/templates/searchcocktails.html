@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+    <header>Search Cocktails</header>
+        <form>
+            <input type="text" name="searchCocktailName">
+            <input type="submit" value="Name">
+        </form>
+        <form>
+            <label>Description:<br/>
+                <textarea name="searchCocktailDescription"></textarea>
+            </label>
+        </form>
+        <form>
+            <label>Ingredients:<br/>
+                <textarea name="searchCocktailIngredients"></textarea>
+            </label>
+        </form>
+        <form>
+            <label>Recipe:<br/>
+                <textarea name="searchCocktailRecipe"></textarea>
+            </label>
+        </form>
+        <div th:replace="~{fragments :: home}"></div>
+</body>
+</html>

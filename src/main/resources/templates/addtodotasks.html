@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+    <header>Add TODO Task</header>
+        <select name="todoTaskType">
+                <option value="">Task Type</option>
+                <option value="1">Cleaning</option>
+                <option value="2">Stocking</option>
+                <option value="3">Rotating</option>
+                <option value="4">Ordering</option>
+                <option value="5">Miscellaneous</option>
+        </select>
+        <form>
+            <label>Notes:<br/>
+                <textarea name="todoTaskNotes"></textarea>
+            </label>
+        </form>
+        <form>
+            <input type="date" name="idealDateCompletedBy">
+            <input type="submit" value="Desired Completion Date">
+        </form>
+        <div th:replace="~{fragments :: home}"></div>
+</body>
+</html>

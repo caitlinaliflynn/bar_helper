@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+    <header>Add New Cocktail</header>
+        <form action="/addnewcocktail" method="POST">
+            <input type="text" name="newCocktail">
+            <label>Description:<br/>
+                <textarea name="newCocktail"></textarea>
+            </label>
+            <label>Ingredients:<br/>
+                <textarea name="newCocktail"></textarea>
+            </label>
+            <label>Recipe:<br/>
+                <textarea name="newCocktail"></textarea>
+            </label>
+            <button type="submit">Add New Cocktail</button>
+        </form>
+        <nav>
+            <div>
+                <a href="/listcocktails">List of Cocktails</a>
+            </div>
+        </nav>
+        <div th:replace="~{fragments :: home}"></div>
+</body>
+</html>

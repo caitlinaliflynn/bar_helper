@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+    <header>Cocktail List</header>
+        <p th:unless="${cocktails} and ${cocktails.size()}">
+            You have not added any cocktails yet!
+        </p>
+        <ul>
+            <th:block th:each="cocktail : ${cocktails}">
+                <li th:text="${cocktail}"></li>
+            </th:block>
+        </ul>
+        <p><a href="/addnewcocktail">Add Cocktails</a></p>
+
+        <div th:replace="~{fragments :: home}"></div>
+</body>
+</html>
