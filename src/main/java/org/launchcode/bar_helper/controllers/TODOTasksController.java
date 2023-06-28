@@ -1,6 +1,6 @@
 package org.launchcode.bar_helper.controllers;
 
-import org.launchcode.bar_helper.models.AddTODOTasks;
+import org.launchcode.bar_helper.models.TODOTasks;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 public class TODOTasksController {
 
-    public static List<AddTODOTasks> todoTasksList = new ArrayList<>();
+    public static List<TODOTasks> todoTasksList = new ArrayList<>();
 
     @GetMapping("addtodotasks")
     public String displayAddTODOTasksPage() {
@@ -24,7 +24,7 @@ public class TODOTasksController {
 
     @PostMapping("addtodotasks")
     public String processAddTODOTasksPage(@RequestParam String todoTaskName, String todoTaskNotes, Date desiredCompletionDate) {
-        todoTasksList.add(new AddTODOTasks(todoTaskName, todoTaskNotes, desiredCompletionDate));
+        todoTasksList.add(new TODOTasks(todoTaskName, todoTaskNotes, desiredCompletionDate));
         return "addtodotasks";
     }
 

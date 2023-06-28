@@ -2,7 +2,7 @@ package org.launchcode.bar_helper.models;
 
 import java.util.Date;
 
-public class AddCompletedTasks {
+public class CompletedTasks {
 
     private enum completedTaskType {
         CLEANING,
@@ -15,7 +15,7 @@ public class AddCompletedTasks {
     private String completedTaskNotes;
     private Date dateCompleted;
 
-    public AddCompletedTasks(String completedTaskName, String completedTaskDescription, Date dateCompleted) {
+    public CompletedTasks(String completedTaskName, String completedTaskDescription, Date dateCompleted) {
         this.completedTaskName = completedTaskName;
         this.completedTaskNotes = completedTaskDescription;
         this.dateCompleted = dateCompleted;

@@ -3,7 +3,7 @@ package org.launchcode.bar_helper.models;
 import java.util.Date;
 import java.util.Objects;
 
-public class AddTODOTasks {
+public class TODOTasks {
 
     private enum todoTaskType {
         CLEANING,
@@ -18,7 +18,7 @@ public class AddTODOTasks {
 
     private Date desiredCompletionDate;
 
-    public AddTODOTasks(String todoTaskName, String todoTaskDescription, Date desiredCompletionDate) {
+    public TODOTasks(String todoTaskName, String todoTaskDescription, Date desiredCompletionDate) {
         this.todoTaskName = todoTaskName;
         this.todoTaskNotes = todoTaskDescription;
         this.desiredCompletionDate = desiredCompletionDate;
@@ -58,7 +58,7 @@ public class AddTODOTasks {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof AddTODOTasks that)) return false;
+        if (!(o instanceof TODOTasks that)) return false;
         return Objects.equals(getTodoTaskName(), that.getTodoTaskName()) && Objects.equals(getTodoTaskNotes(), that.getTodoTaskNotes()) && Objects.equals(getDesiredCompletionDate(), that.getDesiredCompletionDate());
     }
 

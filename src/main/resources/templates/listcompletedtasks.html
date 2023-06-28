@@ -4,7 +4,7 @@
 <body>
     <header>Completed Tasks List</header>
         <p th:unless="${completedtasks} and ${completedtasks.size()}">
-            You have not added any Completed tasks yet!
+            You have not added any completed tasks yet!
         </p>
         <div>
             <th:block th:each="task : ${completedtasks}">

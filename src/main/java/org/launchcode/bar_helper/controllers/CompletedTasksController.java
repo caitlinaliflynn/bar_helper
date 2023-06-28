@@ -1,6 +1,6 @@
 package org.launchcode.bar_helper.controllers;
 
-import org.launchcode.bar_helper.models.AddCompletedTasks;
+import org.launchcode.bar_helper.models.CompletedTasks;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 public class CompletedTasksController {
 
-    public static List<AddCompletedTasks> completedTasksList = new ArrayList<>();
+    public static List<CompletedTasks> completedTasksList = new ArrayList<>();
 
     @GetMapping("addcompletedtasks")
     public String displayCompletedTasksPage() {
@@ -23,7 +23,7 @@ public class CompletedTasksController {
 
     @PostMapping("addcompletedtasks")
     public String processAddCompletedTasksPage(@RequestParam String completedTaskName, String completedTaskNotes, Date dateCompleted){
-        completedTasksList.add(new AddCompletedTasks(completedTaskName, completedTaskNotes, dateCompleted));
+        completedTasksList.add(new CompletedTasks(completedTaskName, completedTaskNotes, dateCompleted));
         return "addcompletedtasks";
     }
 

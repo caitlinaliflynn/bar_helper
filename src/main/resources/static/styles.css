@@ -1,8 +1,6 @@
 header {
-    font-size: 300%;
+    font-size: 250%;
     text-align: center;
-    background-color: #B03A2E;
-    color: white;
 }
 
 body {
@@ -12,7 +10,7 @@ body {
 }
 
 div {
-    font-size: 150%;
+    font-size: 125%;
 }
 
 

@@ -1,6 +1,6 @@
 package org.launchcode.bar_helper.models;
 
-public class AddTips {
+public class Tips {
 
     private double hourlyRate;
     private double creditCardTips;
@@ -9,7 +9,7 @@ public class AddTips {
     private double taxRate;
     private double totalHourly;
 
-    public AddTips(double hourlyRate, double creditCardTips, double cashTips, double totalClaimed, double taxRate, double totalHourly) {
+    public Tips(double hourlyRate, double creditCardTips, double cashTips, double totalClaimed, double taxRate, double totalHourly) {
         this.hourlyRate = hourlyRate;
         this.creditCardTips = creditCardTips;
         this.cashTips = cashTips;
