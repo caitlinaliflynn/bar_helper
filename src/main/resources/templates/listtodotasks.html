@@ -2,6 +2,17 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="~{fragments :: head}"></head>
 <body>
+    <header>TODO Tasks List</header>
+        <p th:unless="${todotasks} and ${todotasks.size()}">
+            You have not added any TODO tasks yet!
+        </p>
+        <div>
+            <th:block th:each="task : ${todotasks}">
+                <li th:text="${task}"></li>
+            </th:block>
+        </div>
+        <p><a href="/addtodotasks">Add TODO Tasks</a></p>
 
+        <div th:replace="~{fragments :: home}"></div>
 </body>
 </html>

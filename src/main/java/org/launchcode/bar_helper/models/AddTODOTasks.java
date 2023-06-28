@@ -1,6 +1,7 @@
 package org.launchcode.bar_helper.models;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class AddTODOTasks {
 
@@ -11,14 +12,24 @@ public class AddTODOTasks {
         ORDERING,
         MISCELLANEOUS;
     }
+    private String todoTaskName;
 
     private String todoTaskNotes;
 
-    private Date idealDateCompletedBy;
+    private Date desiredCompletionDate;
 
-    public AddTODOTasks(String todoTaskDescription, Date idealDateCompletedBy) {
+    public AddTODOTasks(String todoTaskName, String todoTaskDescription, Date desiredCompletionDate) {
+        this.todoTaskName = todoTaskName;
         this.todoTaskNotes = todoTaskDescription;
-        this.idealDateCompletedBy = idealDateCompletedBy;
+        this.desiredCompletionDate = desiredCompletionDate;
+    }
+
+    public String getTodoTaskName() {
+        return todoTaskName;
+    }
+
+    public void setTodoTaskName(String todoTaskName) {
+        this.todoTaskName = todoTaskName;
     }
 
     public String getTodoTaskNotes() {
@@ -29,18 +40,30 @@ public class AddTODOTasks {
         this.todoTaskNotes = todoTaskNotes;
     }
 
-    public Date getIdealDateCompletedBy() {
-        return idealDateCompletedBy;
+    public Date getDesiredCompletionDate() {
+        return desiredCompletionDate;
     }
 
-    public void setIdealDateCompletedBy(Date idealDateCompletedBy) {
-        this.idealDateCompletedBy = idealDateCompletedBy;
+    public void setDesiredCompletionDate(Date desiredCompletionDate) {
+        this.desiredCompletionDate = desiredCompletionDate;
     }
 
     @Override
     public String toString() {
-        return "TODO Tasks" + '\n' +
+        return "Name: " + todoTaskName + '\n' +
                 "Notes: " + todoTaskNotes + '\n' +
-                "Ideal Date Completed By: " + idealDateCompletedBy;
+                "Ideal Date Completed By: " + desiredCompletionDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AddTODOTasks that)) return false;
+        return Objects.equals(getTodoTaskName(), that.getTodoTaskName()) && Objects.equals(getTodoTaskNotes(), that.getTodoTaskNotes()) && Objects.equals(getDesiredCompletionDate(), that.getDesiredCompletionDate());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTodoTaskName(), getTodoTaskNotes(), getDesiredCompletionDate());
     }
 }

@@ -4,16 +4,10 @@
 <body>
     <header>Add New Cocktail</header>
         <form action="/addnewcocktail" method="POST">
-            <input type="text" name="newCocktail">
-            <label>Description:<br/>
-                <textarea name="newCocktail"></textarea>
-            </label>
-            <label>Ingredients:<br/>
-                <textarea name="newCocktail"></textarea>
-            </label>
-            <label>Recipe:<br/>
-                <textarea name="newCocktail"></textarea>
-            </label>
+            <label>Name: <input type="text" name="newCocktailName" /></label><br/>
+            <label>Description: <input type="text" name="newCocktailDescription" /></label><br/>
+            <label>Ingredients: <input type="text" name="newCocktailIngredients" /></label><br/>
+            <label>Recipe: <input type="text" name="newCocktailRecipe" /></label><br/>
             <button type="submit">Add New Cocktail</button>
         </form>
         <nav>

@@ -3,23 +3,24 @@
 <head th:replace="~{fragments :: head}"></head>
 <body>
     <header>Add TODO Task</header>
-        <select name="todoTaskType">
+        <form action="/addtodotasks" method="POST">
+            <select name="todoTaskType">
                 <option value="">Task Type</option>
                 <option value="1">Cleaning</option>
                 <option value="2">Stocking</option>
                 <option value="3">Rotating</option>
                 <option value="4">Ordering</option>
                 <option value="5">Miscellaneous</option>
-        </select>
-        <form>
-            <label>Notes:<br/>
-                <textarea name="todoTaskNotes"></textarea>
-            </label>
+            </select><br/>
+            <label>Name: <input type="text" name="todoTaskName" /></label><br/>
+            <label>Notes: <input type="text" name="todoTaskNotes" /></label><br/>
+            <button type="submit">Add New TODO Task</button>
         </form>
-        <form>
-            <input type="date" name="idealDateCompletedBy">
-            <input type="submit" value="Desired Completion Date">
-        </form>
+        <nav>
+            <div>
+                <a href="/listtodotasks">List of TODO Tasks</a>
+            </div>
+        </nav>
         <div th:replace="~{fragments :: home}"></div>
 </body>
 </html>

@@ -1,12 +1,15 @@
 package org.launchcode.bar_helper.models;
-public class AddNewCocktail {
+
+import java.util.Objects;
+
+public class NewCocktail {
 
     private String newCocktailName;
     private String newCocktailDescription;
     private String newCocktailIngredients;
     private String newCocktailRecipe;
 
-    public AddNewCocktail(String newCocktailName, String newCocktailDescription, String newCocktailIngredients, String newCocktailRecipe) {
+    public NewCocktail(String newCocktailName, String newCocktailDescription, String newCocktailIngredients, String newCocktailRecipe) {
         this.newCocktailName = newCocktailName;
         this.newCocktailDescription = newCocktailDescription;
         this.newCocktailIngredients = newCocktailIngredients;
@@ -47,10 +50,21 @@ public class AddNewCocktail {
 
     @Override
     public String toString() {
-        return "New Cocktail" + '\n' +
-                "Name: " + newCocktailName + '\n' +
+        return "Name: " + newCocktailName + '\n' +
                 "Description: " + newCocktailDescription + '\n' +
                 "Ingredients: " + newCocktailIngredients + '\n' +
                 "Recipe: " + newCocktailRecipe;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof NewCocktail that)) return false;
+        return Objects.equals(getNewCocktailName(), that.getNewCocktailName()) && Objects.equals(getNewCocktailDescription(), that.getNewCocktailDescription()) && Objects.equals(getNewCocktailIngredients(), that.getNewCocktailIngredients()) && Objects.equals(getNewCocktailRecipe(), that.getNewCocktailRecipe());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNewCocktailName(), getNewCocktailDescription(), getNewCocktailIngredients(), getNewCocktailRecipe());
     }
 }

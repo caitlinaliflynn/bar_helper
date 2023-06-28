@@ -3,23 +3,24 @@
 <head th:replace="~{fragments :: head}"></head>
 <body>
     <header>Add Completed Task</header>
-        <select name="completedTaskType">
-            <option value="">Task Type</option>
-            <option value="1">Cleaning</option>
-            <option value="2">Stocking</option>
-            <option value="3">Rotating</option>
-            <option value="4">Ordering</option>
-            <option value="5">Miscellaneous</option>
-        </select>
-        <form>
-            <label>Notes:<br/>
-                <textarea name="completedTaskNotes"></textarea>
-            </label>
+        <form action="/addcompletedtasks" method="POST">
+            <select name="completedTaskType">
+                <option value="">Task Type</option>
+                <option value="1">Cleaning</option>
+                <option value="2">Stocking</option>
+                <option value="3">Rotating</option>
+                <option value="4">Ordering</option>
+                <option value="5">Miscellaneous</option>
+            </select><br/>
+            <label>Name: <input type="text" name="completedTaskName" /></label><br/>
+            <label>Notes: <input type="text" name="completedTaskNotes" /></label><br/>
+            <button type="submit">Add New Completed Task</button>
         </form>
-        <form>
-            <input type="date" name="dateCompleted">
-            <input type="submit" value="Completed On">
-        </form>
+        <nav>
+            <div>
+                <a href="/listcompletedtasks">List of Completed Tasks</a>
+            </div>
+        </nav>
         <div th:replace="~{fragments :: home}"></div>
 </body>
 </html>

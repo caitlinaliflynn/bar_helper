@@ -11,12 +11,22 @@ public class AddCompletedTasks {
         ORDERING,
         MISCELLANEOUS;
     }
+    private String completedTaskName;
     private String completedTaskNotes;
     private Date dateCompleted;
 
-    public AddCompletedTasks(String completedTaskDescription, Date dateCompleted) {
+    public AddCompletedTasks(String completedTaskName, String completedTaskDescription, Date dateCompleted) {
+        this.completedTaskName = completedTaskName;
         this.completedTaskNotes = completedTaskDescription;
         this.dateCompleted = dateCompleted;
+    }
+
+    public String getCompletedTaskName() {
+        return completedTaskName;
+    }
+
+    public void setCompletedTaskName(String completedTaskName) {
+        this.completedTaskName = completedTaskName;
     }
 
     public String getCompletedTaskNotes() {
@@ -37,7 +47,7 @@ public class AddCompletedTasks {
 
     @Override
     public String toString() {
-        return "Completed Tasks" + '\n' +
+        return "Name: " + completedTaskName + '\n' +
                 "Notes: " + completedTaskNotes + '\n' +
                 "Date Completed: " + dateCompleted;
     }
